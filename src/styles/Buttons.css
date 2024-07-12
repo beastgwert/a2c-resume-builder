@@ -1,0 +1,34 @@
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.save, .cancel {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: white;
+    transition-property: none;
+}
+
+.save { 
+    background-color: #187ff5;
+}
+
+
+.cancel {
+    background-color: rgb(241, 92, 92);
+}
+
+.save:hover {
+    color: #187ff5;
+    background-color: white;
+    transform: scale(1.1);
+}
+
+.cancel:hover {
+    color: rgb(241, 92, 92);
+    background-color: white;
+    transform: scale(1.1);
+}

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 0.5px solid yellow; */
+    background-color: white;
+
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  @media (max-width: 1600px) {
+      font-size: 80%;
+    }
+  
+    @media (max-width: 1200px) {
+      font-size: 70%;
+    }
+  
+    @media (max-width: 800px) {
+      font-size: 60%;
+    }
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+input,  textarea{
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  overflow-wrap: break-word;
+}

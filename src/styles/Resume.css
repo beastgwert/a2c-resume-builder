@@ -1,0 +1,73 @@
+.display-side {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    min-width: 23.25cm;
+    max-width: 23.26cm;
+    min-height: 29.7cm;
+    max-height: 29.71cm;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.display-side p {
+    padding: 3px;
+}
+
+.resume-header { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.personal-1 {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+}
+.personal-2 {
+    display: flex;
+}
+
+.awards-header, .extracurriculars-header, .education-header{
+    border-bottom: 2.3px solid black;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.info-box{
+    margin-top: 3px;
+    /* border: 1px solid red; */
+}
+.award, .school {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.award-date {
+    font-style: italic;
+}
+
+.extracurricular {
+    display: flex;
+    flex-direction: column;
+}
+
+.extracurricular-row1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.extracurricular-numerical-info {
+    display: flex;
+}
+
+.extracurricular-hours-per-week {
+    font-style: italic;
+}
+.extracurricular-grade-levels {
+    margin-left: 15px;
+}

@@ -1,0 +1,61 @@
+.collapsed-form {
+    /* padding: 0.5rem 0; */
+    height: 3.5rem;
+    border-bottom: 1px dashed gray;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.collapsed-form:hover {
+    /* border: 1px dashed black; */
+    color: grey;
+}
+
+.right-collapsed {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.move-forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: grey;
+}
+
+.move-up {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 18px;
+}
+
+
+.move-down {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-right: 1px;
+    padding-left: 5.5px;
+    padding-right: 5px;
+}
+
+.move-up, .move-down {
+    border-radius: 5px;
+}
+.move-up:hover, .move-down:hover {
+    background-color: grey;
+    color: white;
+}   
+
+.remove {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+    object-position: center;
+    margin-left: 0.5rem;
+}

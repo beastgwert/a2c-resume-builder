@@ -1,0 +1,107 @@
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+#root {
+    width: 100%;
+    padding: 2.5vh 15vw 2.5vh;
+    display: flex;
+    --main-bg-color: rgb(249, 239, 223);
+    /* main background color */
+   
+}
+
+#root, body, .edit-side, .display-side, .utility {
+    background-color: var(--main-bg-color);
+}
+
+h2 {
+    font-weight: 650;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--main-bg-color);
+    border-radius: 5px;
+    border: transparent;
+}
+
+.section-content {
+    margin-bottom: 0.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.edit-side {
+    margin-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.personal-section, .awards-section, .extracurriculars-section, .display-side{
+    padding: 2rem;
+    border: transparent;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    background-color: white;
+    
+}
+
+.personal-section {
+    padding: 1.75rem 1.5rem;
+}
+
+.awards-section, .extracurriculars-section {
+    padding: 1.5rem;
+}
+
+.add-form {
+    margin-top: 1rem;
+    border: 10px;
+    border-radius: 50%;
+    padding: 4px 8px;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(216, 142, 142);
+}
+
+.add-form:hover {
+    color: rgb(216, 142, 142);
+    background-color: white;
+}
+.utility {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.utility button {
+    flex-basis: 47.5%;
+    border-radius: 5px;
+    border: transparent;
+    padding: 3px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+}
+
+/* #clear-button {
+    margin-right: 0.5rem
+} */
+
+#clear-button:hover, #download-button:hover {
+    border: 1px solid black;
+    transform: scale(1.1);
+}
