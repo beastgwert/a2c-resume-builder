@@ -2,13 +2,15 @@ body {
     min-width: fit-content;
     min-height: 100vh;
     display: flex;
+    justify-content: center;
+    --main-bg-color: rgb(249, 239, 223);
 }
 
 #root {
-    width: 100%;
+    min-width: calc(23.25cm + 15rem);
     padding: 2.5vh 15vw 2.5vh;
     display: flex;
-    --main-bg-color: rgb(249, 239, 223);
+    
     /* main background color */
    
 }
