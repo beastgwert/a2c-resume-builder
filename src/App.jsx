@@ -144,13 +144,15 @@ function App() {
     const tempData = {...sections};
     const tempPersonal = {...personalInfo}
 
+    //clear sections
     tempData.personalInfo = {};
     tempData.awards.content = [];
     tempData.awards.isEditing = -1;
     tempData.extracurriculars.content = [];
     tempData.extracurriculars.isEditing = -1;
-    tempPersonal.name = tempPersonal.email = tempPersonal.phoneNumber = tempPersonal.address = "";
-
+    //clear personal
+    Object.keys(tempPersonal).forEach(k => tempPersonal[k] = "");
+  
     setSections(tempData);
     setPersonalInfo(tempPersonal);
   }
