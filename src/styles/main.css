@@ -11,6 +11,8 @@
 
 html {
   font-family: "Inter", sans-serif;
+  min-height: fit-content;
+  min-width: fit-content;
   font-size: 14px;
   @media (max-width: 1600px) {
       font-size: 80%;
@@ -22,6 +24,10 @@ html {
   
     @media (max-width: 800px) {
       font-size: 60%;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 50%;
     }
 }
 
