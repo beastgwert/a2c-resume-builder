@@ -1,6 +1,6 @@
 import Buttons from "./Buttons"
 
-export default function ExtracurricularsForm({forms, onSave, onRemove, onChange}){
+export default function ExtracurricularsForm({forms, onSave, onCancel, onChange}){
     return (
         <>
             <form>
@@ -27,7 +27,7 @@ export default function ExtracurricularsForm({forms, onSave, onRemove, onChange}
                 <Buttons 
                 section = "extracurriculars"
                 save = {onSave}
-                remove = {onRemove}
+                cancel = {onCancel}
                 />
             </form>
         </>

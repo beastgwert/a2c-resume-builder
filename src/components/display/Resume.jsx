@@ -6,6 +6,7 @@ export default function Resume({personal, awards, extracurriculars}){
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     function formatDate(date){
+        if(date == null) return '';
         const year = parseInt(date.slice(0, 4));
         const month = parseInt(date.slice(5)) - 1;
         const curDate = new Date();
