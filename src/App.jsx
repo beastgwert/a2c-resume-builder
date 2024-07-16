@@ -9,11 +9,17 @@ import ClearButton from './components/edit/forms/ClearButton';
 import exampleData from './example-data';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf'
+import { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState(exampleData.personalInfo);
   const [sections, setSections] = useState(exampleData.sections);
   const [backupContent, setBackupContent] = useState(null);
+  const printRef = useRef();
+  const handlePrint = useReactToPrint({
+      content: () => printRef.current,
+  });
   console.log("new render", sections);
 
   function changePersonalInfo(e){
@@ -171,6 +177,11 @@ function App() {
       pdf.save('college-resume.pdf'); 
       // Specify the name of the downloaded PDF file
     });
+
+    // const report = new jsPDF('portrait', 'cm', 'a4');
+    // report.html(document.getElementById('pdf-content')).then(() => {
+    //   report.save('report.pdf');
+    // });
   }
 
   
@@ -214,17 +225,19 @@ function App() {
             onClear = {onClear}
           />
           <PdfDownloadButton
-            onDownload = {onDownload}
+            onDownload = {handlePrint}
           />
         </div>
       </div>
       
+     
       <Resume 
         personal = {personalInfo}
         awards = {sections.awards.content}
         extracurriculars = {sections.extracurriculars.content}
+        ref = {printRef}
       />
-      
+       
     </>
   );
 }

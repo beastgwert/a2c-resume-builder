@@ -1,8 +1,10 @@
 import '../../styles/Resume.css';
+import { forwardRef, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
-export default function Resume({personal, awards, extracurriculars}){
+const Resume = forwardRef(({personal, awards, extracurriculars}, ref) => {
     console.log("checking resume: ", awards.map((award) => award.title));
-
+    
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     function formatDate(date){
@@ -16,7 +18,7 @@ export default function Resume({personal, awards, extracurriculars}){
     }
 
     return (
-        <div className='display-side' id='pdf-content'>
+        <div className='display-side' id='pdf-content' ref={ref}>
             <div className="resume-header">
                 <p className="personal-1">{personal.name}</p>
                 <div className="personal-2">
@@ -82,5 +84,8 @@ export default function Resume({personal, awards, extracurriculars}){
                     </div>
             </div>
         </div>
+
     );
-}
+})
+
+export default Resume;
