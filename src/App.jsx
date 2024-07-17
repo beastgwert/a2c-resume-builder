@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/App.css';
 import PersonalSection from './components/edit/sections/PersonalSection';
 import AwardsSection from './components/edit/sections/AwardsSection';
@@ -6,6 +6,7 @@ import ExtracurricularsSection from './components/edit/sections/Extracurriculars
 import Resume from './components/display/Resume';
 import PdfDownloadButton from './components/edit/forms/PdfDownloadButton';
 import ClearButton from './components/edit/forms/ClearButton';
+import LoadExampleButton from './components/edit/forms/LoadExampleButton';
 import exampleData from './example-data';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf'
@@ -13,17 +14,24 @@ import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
 function App() {
-  const [personalInfo, setPersonalInfo] = useState(exampleData.personalInfo);
-  const [sections, setSections] = useState(exampleData.sections);
+  const [personalInfo, setPersonalInfo] = useState(localStorage.getItem("hasVisited") === "true" ? JSON.parse(localStorage.getItem("personalInfo")) : exampleData.personalInfo);
+  const [sections, setSections] = useState(localStorage.getItem("hasVisited") === "true" ? JSON.parse(localStorage.getItem("sections")) : exampleData.sections);
   const [backupContent, setBackupContent] = useState(null);
-  const [sectionOpen, setSectionOpen] = useState(null);
+  const [sectionOpen, setSectionOpen] = useState("Personal");
+
+   // persist user input
+   useEffect(() => {
+    localStorage.setItem("sections", JSON.stringify(sections));
+    localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
+    localStorage.setItem("hasVisited", "true");
+  }, [sections, personalInfo]);
 
   const printRef = useRef();
   const handlePrint = useReactToPrint({
       content: () => printRef.current,
   });
 
-  console.log("new render", sections);
+ 
 
   function changePersonalInfo(e){
     const key = e.target.dataset.key;
@@ -166,6 +174,11 @@ function App() {
     setPersonalInfo(tempPersonal);
   }
 
+  function onLoadExample(){
+    setSections({...exampleData.sections});
+    setPersonalInfo({...exampleData.personalInfo});
+  }
+
   function setOpen(sectionName){
     setSectionOpen(sectionName);
   }  
@@ -182,6 +195,8 @@ function App() {
           schoolName = {personalInfo.schoolName}
           schoolStart = {personalInfo.schoolStart}
           schoolEnd = {personalInfo.schoolEnd}
+          setOpen = {setOpen}
+          isOpen = {sectionOpen === "Personal"}
         />
         <AwardsSection 
           awards = {sections.awards}
@@ -213,9 +228,13 @@ function App() {
           <ClearButton
             onClear = {onClear}
           />
+          <LoadExampleButton
+            onLoadExample = {onLoadExample}
+          />
           <PdfDownloadButton
             onDownload = {handlePrint}
           />
+
         </div>
       </div>
       

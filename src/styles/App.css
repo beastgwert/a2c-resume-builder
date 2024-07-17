@@ -68,6 +68,7 @@ input, textarea {
 
 .personal-section {
     padding: 1.75rem 1.5rem;
+    padding-bottom: 0;
 }
 
 .awards-section, .extracurriculars-section {
@@ -96,18 +97,15 @@ input, textarea {
 }
 
 .utility button {
-    flex-basis: 47.5%;
+    flex-basis: 30%;
     border-radius: 5px;
     border: transparent;
     padding: 3px;
     box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
 }
 
-/* #clear-button {
-    margin-right: 0.5rem
-} */
-
-#clear-button:hover, #download-button:hover {
+.utility button:hover {
     border: 1px solid black;
     transform: scale(1.1);
+    flex-grow: 0;
 }

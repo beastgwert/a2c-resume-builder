@@ -1,10 +1,17 @@
 import '../../../styles/PersonalSection.css'
+import '../../../styles/Section.css'
+import SectionHeader from "./SectionHeader";
 
-export default function PersonalSection({onChange, name, email, phoneNumber, address, schoolName, schoolStart, schoolEnd}){
+export default function PersonalSection({onChange, name, email, phoneNumber, address, schoolName, schoolStart, schoolEnd, setOpen, isOpen}){
     return (
         <div className='personal-section'>
-            <h2>Personal Information</h2>
-            <form>
+            <SectionHeader
+                setOpen={setOpen}
+                isOpen={isOpen}
+                sectionTitle="Personal Information"
+                sectionName="Personal"
+            />
+            <form className={`section-content ${isOpen ? 'open' : ''}`}>
                 <div className='input-group'>
                     <label htmlFor="name">Name </label>
                     <input type="text" id="name" data-key="name" placeholder="Enter first and last name" value={name} onChange={onChange}/>
@@ -33,12 +40,12 @@ export default function PersonalSection({onChange, name, email, phoneNumber, add
                     <div className='school-dates'>
                         <div className='input-group'>
                             <label htmlFor="schoolStart">Start </label>
-                            <input type="text" id="schoolStart" data-key="schoolStart"  value={schoolStart} onChange={onChange}/>
+                            <input type="text" id="schoolStart" data-key="schoolStart" placeholder='xxxx' value={schoolStart} onChange={onChange}/>
                         </div>
         
                         <div className='input-group' id='schoolEndGroup'>
                             <label htmlFor="schoolEnd">End </label>
-                            <input type="text" id="schoolEnd" data-key="schoolEnd" value={schoolEnd} onChange={onChange}/>
+                            <input type="text" id="schoolEnd" data-key="schoolEnd" placeholder='xxxx' value={schoolEnd} onChange={onChange}/>
                         </div>
                     </div>
                 </div>
