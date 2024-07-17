@@ -14,9 +14,12 @@
 }
 
 .school-dates .input-group {
-    width: 55px;
+    width: 4rem;
 }
 
+.school-title {
+    width: 16rem;
+}
 .school-dates label {
     font-size: 1rem;
 }
