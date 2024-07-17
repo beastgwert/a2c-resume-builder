@@ -7,7 +7,7 @@ body {
 }
 
 #root {
-    min-width: calc(23.25cm + 12rem);
+    /* min-width: calc(23.25cm + 12rem); */
     padding: 2.5vh 0 2.5vh;
     display: flex;
     
@@ -53,6 +53,7 @@ input, textarea {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    width: 35rem;
 }
 
 .personal-section, .awards-section, .extracurriculars-section, .display-side{

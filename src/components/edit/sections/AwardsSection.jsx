@@ -1,12 +1,19 @@
 import FormDisplay from "../forms/FormDisplay";
 import AwardsForm from "../forms/AwardsForm";
 import AddFormButton from "../forms/AddFormButton";
+import SectionHeader from "./SectionHeader";
+import '../../../styles/Section.css'
 
-export default function AwardsSection({awards, onChange, onCollapsedChange, onSave, onRemove, onCancel, onAdd, onUp, onDown}){
+export default function AwardsSection({awards, onChange, onCollapsedChange, onSave, onRemove, onCancel, onAdd, onUp, onDown, setOpen, isOpen}){
     return (
         <div className="awards-section">
-            <h2>Awards & Honors</h2>
-            <div className="section-content">
+            <SectionHeader
+                setOpen={setOpen}
+                isOpen={isOpen}
+                sectionTitle="Awards & Honors"
+                sectionName="Awards"
+            />
+            <div className={`section-content ${isOpen ? "open" : ""}`}>
                 <FormDisplay 
                 forms = {awards}
                 FormComponent = {AwardsForm}
@@ -19,13 +26,14 @@ export default function AwardsSection({awards, onChange, onCollapsedChange, onSa
                 onUp={onUp}
                 onDown={onDown}
                 />
+            
+                <AddFormButton 
+                section = 'awards'
+                buttonContent = "+"
+                onClick = {onAdd}
+                isEditing = {awards.isEditing}
+                />
             </div>
-            <AddFormButton 
-            section = 'awards'
-            buttonContent = "+"
-            onClick = {onAdd}
-            isEditing = {awards.isEditing}
-            />
         </div>
     );
 }

@@ -16,10 +16,13 @@ function App() {
   const [personalInfo, setPersonalInfo] = useState(exampleData.personalInfo);
   const [sections, setSections] = useState(exampleData.sections);
   const [backupContent, setBackupContent] = useState(null);
+  const [sectionOpen, setSectionOpen] = useState(null);
+
   const printRef = useRef();
   const handlePrint = useReactToPrint({
       content: () => printRef.current,
   });
+
   console.log("new render", sections);
 
   function changePersonalInfo(e){
@@ -163,27 +166,9 @@ function App() {
     setPersonalInfo(tempPersonal);
   }
 
-  function onDownload(){
-    const input = document.getElementById('pdf-content'); 
-
-    // Specify the id of the element you want to convert to PDF
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      // const pdfWidth = pdf.internal.pageSize.getWidth();
-      // const pdfHeight = pdf.internal.pageSize.getHeight();
-      // pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.addImage(imgData, 'PNG', 0, 0);
-      pdf.save('college-resume.pdf'); 
-      // Specify the name of the downloaded PDF file
-    });
-
-    // const report = new jsPDF('portrait', 'cm', 'a4');
-    // report.html(document.getElementById('pdf-content')).then(() => {
-    //   report.save('report.pdf');
-    // });
-  }
-
+  function setOpen(sectionName){
+    setSectionOpen(sectionName);
+  }  
   
   return (
     <>
@@ -208,6 +193,8 @@ function App() {
           onAdd = {onAdd}
           onUp = {onUp}
           onDown = {onDown}
+          setOpen = {setOpen}
+          isOpen = {sectionOpen === "Awards"}
         />
         <ExtracurricularsSection
           extracurriculars = {sections.extracurriculars}
@@ -219,6 +206,8 @@ function App() {
           onAdd = {onAdd}
           onUp = {onUp}
           onDown = {onDown}
+          setOpen = {setOpen}
+          isOpen = {sectionOpen === "Extracurriculars"}
         />
         <div className='utility'>
           <ClearButton
