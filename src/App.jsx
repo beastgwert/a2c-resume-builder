@@ -14,11 +14,12 @@ import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
 function App() {
-  const [personalInfo, setPersonalInfo] = useState(localStorage.getItem("hasVisited") === "true" ? JSON.parse(localStorage.getItem("personalInfo")) : exampleData.personalInfo);
-  const [sections, setSections] = useState(localStorage.getItem("hasVisited") === "true" ? JSON.parse(localStorage.getItem("sections")) : exampleData.sections);
+  const [personalInfo, setPersonalInfo] = useState(localStorage.getItem("hasVisited") === "true" ? JSON.parse(localStorage.getItem("personalInfo")) : {...exampleData.personalInfo});
+  const [sections, setSections] = useState(localStorage.getItem("hasVisited") === "true" ? JSON.parse(localStorage.getItem("sections")) : {...exampleData.sections});
   const [backupContent, setBackupContent] = useState(null);
   const [sectionOpen, setSectionOpen] = useState("Personal");
 
+  console.log("exampleData: ", exampleData)
    // persist user input
    useEffect(() => {
     localStorage.setItem("sections", JSON.stringify(sections));
@@ -175,8 +176,8 @@ function App() {
   }
 
   function onLoadExample(){
-    setSections({...exampleData.sections});
     setPersonalInfo({...exampleData.personalInfo});
+    setSections(JSON.parse(JSON.stringify(exampleData.sections)));
   }
 
   function setOpen(sectionName){
