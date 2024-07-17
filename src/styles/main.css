@@ -9,6 +9,10 @@
 
 }
 
+*:focus {
+  outline: none;
+}
+
 html {
   font-family: "Inter", sans-serif;
   height: fit-content;
@@ -40,6 +44,10 @@ input,  textarea{
   font-family: "Inter", sans-serif;
 }
 
+input:focus {
+  border: 2px solid rgb(99, 88, 70);
+  transition: border 0.5s;
+}
 p {
   overflow-wrap: break-word;
 }

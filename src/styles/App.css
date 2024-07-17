@@ -3,7 +3,8 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    --main-bg-color: rgb(249, 239, 223);
+    --main-bg-color: rgb(245, 230, 216);
+    --input-bg-color: rgb(253, 246, 236);
 }
 
 #root {
@@ -34,7 +35,7 @@ label {
 input, textarea {
     padding: 0.5rem;
     font-size: 1rem;
-    background-color: var(--main-bg-color);
+    background-color: var(--input-bg-color);
     border-radius: 5px;
     border: transparent;
 }
@@ -71,6 +72,7 @@ input, textarea {
 
 .awards-section, .extracurriculars-section {
     padding: 1.5rem;
+    padding-bottom: 0;
 }
 
 .add-form {
