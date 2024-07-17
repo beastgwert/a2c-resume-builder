@@ -5,6 +5,7 @@
 }
 
 .save, .cancel {
+    border: transparent;
     border-radius: 5px;
     padding: 0.5rem 1rem;
     font-weight: 600;

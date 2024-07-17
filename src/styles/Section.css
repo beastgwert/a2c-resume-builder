@@ -16,6 +16,23 @@
     display: flex;
     justify-content: space-between;
 }
+
+.fas {
+    margin-top: 3px;
+    font-size: 1.5rem;
+}
+
+.fa-medal, .fa-church {
+    margin-top: 5px;
+    font-size: 1.4rem;
+}
+
+
+.section-title {
+    display: flex;
+    gap: 10px;
+}
+
 .section-content {
     position: relative;
     visibility: hidden;

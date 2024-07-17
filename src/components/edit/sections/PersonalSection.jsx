@@ -10,6 +10,7 @@ export default function PersonalSection({onChange, name, email, phoneNumber, add
                 isOpen={isOpen}
                 sectionTitle="Personal Information"
                 sectionName="Personal"
+                iconName="fas fa-user"
             />
             <form className={`section-content ${isOpen ? 'open' : ''}`}>
                 <div className='input-group'>

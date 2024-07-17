@@ -46,7 +46,7 @@ input,  textarea{
 
 input:focus {
   border: 2px solid rgb(99, 88, 70);
-  transition: border 0.5s;
+  transition: border ease-in-out .3s;
 }
 p {
   overflow-wrap: break-word;

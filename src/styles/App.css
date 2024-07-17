@@ -3,8 +3,11 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    --main-bg-color: rgb(245, 230, 216);
-    --input-bg-color: rgb(253, 246, 236);
+    /* --main-bg-color: rgb(245, 230, 216);
+    --input-bg-color: rgb(253, 246, 236); */
+    --main-bg-color: rgb(240 238 235);
+    --input-bg-color: rgb(243 244 246);
+
 }
 
 #root {
@@ -22,7 +25,7 @@ body {
 
 h2 {
     font-weight: 650;
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 1rem;
 }
 
@@ -37,7 +40,7 @@ input, textarea {
     font-size: 1rem;
     background-color: var(--input-bg-color);
     border-radius: 5px;
-    border: transparent;
+    border: 2px solid transparent;
 }
 
 .section-content {

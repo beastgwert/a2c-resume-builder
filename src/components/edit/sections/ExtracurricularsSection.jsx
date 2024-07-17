@@ -12,6 +12,7 @@ export default function ExtracurricularsSection({extracurriculars, onChange, onC
                 isOpen={isOpen}
                 sectionTitle="Extracurriculars"
                 sectionName="Extracurriculars"
+                iconName="fas fa-church"
             />
             <div className={`section-content ${isOpen ? 'open' : ''}`}>
                 <FormDisplay 
