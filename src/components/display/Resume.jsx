@@ -18,7 +18,7 @@ const Resume = forwardRef(({personal, awards, extracurriculars}, ref) => {
     }
 
     return (
-        <div className='display-side' id='pdf-content' ref={ref}>
+        <div className='display-side content-box' id='pdf-content' ref={ref}>
             <div className="resume-header">
                 <p className="personal-1">{personal.name}</p>
                 <div className="personal-2">

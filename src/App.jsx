@@ -4,12 +4,13 @@ import PersonalSection from './components/edit/sections/PersonalSection';
 import AwardsSection from './components/edit/sections/AwardsSection';
 import ExtracurricularsSection from './components/edit/sections/ExtracurricularsSection';
 import Resume from './components/display/Resume';
+import Resume2 from './components/display/Resume2';
 import PdfDownloadButton from './components/edit/forms/PdfDownloadButton';
 import ClearButton from './components/edit/forms/ClearButton';
 import LoadExampleButton from './components/edit/forms/LoadExampleButton';
 import exampleData from './example-data';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf'
+import Sidebar from './components/Sidebar';
+import Customize from './components/Customize'
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
@@ -18,6 +19,8 @@ function App() {
   const [sections, setSections] = useState(localStorage.getItem("hasVisited") === "true" ? JSON.parse(localStorage.getItem("sections")) : {...exampleData.sections});
   const [backupContent, setBackupContent] = useState(null);
   const [sectionOpen, setSectionOpen] = useState("Personal");
+  const [isContent, setIsContent] = useState(true);
+  const [resumeIndex, setResumeIndex] = useState(0);
 
   console.log("exampleData: ", exampleData)
    // persist user input
@@ -33,6 +36,11 @@ function App() {
   });
 
  
+  function changeEditDisplay(e){
+    const key = e.target.closest('.sidebar-container').dataset.key;
+    console.log("got to edit display: ", key, e.target);
+    setIsContent(key == "content");
+  }
 
   function changePersonalInfo(e){
     const key = e.target.dataset.key;
@@ -186,7 +194,13 @@ function App() {
   
   return (
     <>
+      <Sidebar 
+      onChange = {changeEditDisplay}
+      isContent = {isContent}
+      />
       <div className='edit-side'>
+        {isContent ? 
+        <>
         <PersonalSection 
           onChange = {changePersonalInfo}
           name = {personalInfo.name}
@@ -225,6 +239,10 @@ function App() {
           setOpen = {setOpen}
           isOpen = {sectionOpen === "Extracurriculars"}
         />
+        </>
+        :
+        <Customize />
+        }
         <div className='utility'>
           <ClearButton
             onClear = {onClear}
@@ -239,14 +257,24 @@ function App() {
         </div>
       </div>
       
-     
+     {resumeIndex == 0 ? 
       <Resume 
         personal = {personalInfo}
         awards = {sections.awards.content}
         extracurriculars = {sections.extracurriculars.content}
         ref = {printRef}
       />
-       
+      :
+      resumeIndex == 1 ?
+      <Resume2
+        personal = {personalInfo}
+        awards = {sections.awards.content}
+        extracurriculars = {sections.extracurriculars.content}
+        ref = {printRef}
+      />
+      :
+      ""
+     }
     </>
   );
 }

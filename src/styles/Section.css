@@ -17,16 +17,11 @@
     justify-content: space-between;
 }
 
-.fas {
-    margin-top: 3px;
+.fas, .fa-medal, .fa-church {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
 }
-
-.fa-medal, .fa-church {
-    margin-top: 5px;
-    font-size: 1.4rem;
-}
-
 
 .section-title {
     display: flex;

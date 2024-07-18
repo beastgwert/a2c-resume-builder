@@ -4,7 +4,7 @@ import SectionHeader from "./SectionHeader";
 
 export default function PersonalSection({onChange, name, email, phoneNumber, address, schoolName, schoolStart, schoolEnd, setOpen, isOpen}){
     return (
-        <div className='personal-section'>
+        <div className='personal-section content-box'>
             <SectionHeader
                 setOpen={setOpen}
                 isOpen={isOpen}

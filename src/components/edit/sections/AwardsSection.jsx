@@ -6,7 +6,7 @@ import '../../../styles/Section.css'
 
 export default function AwardsSection({awards, onChange, onCollapsedChange, onSave, onRemove, onCancel, onAdd, onUp, onDown, setOpen, isOpen}){
     return (
-        <div className="awards-section">
+        <div className="awards-section content-box">
             <SectionHeader
                 setOpen={setOpen}
                 isOpen={isOpen}

@@ -1,6 +1,6 @@
 .collapsed-form {
     /* padding: 0.5rem 0; */
-    height: 3.5rem;
+    height: 4rem;
     border-bottom: 1px dashed gray;
     cursor: pointer;
     display: flex;
@@ -26,20 +26,15 @@
     flex-direction: column;
     justify-content: center;
     color: grey;
+    height: 80%;
 }
 
 .move-up {
-    font-size: 1.5rem;
-    font-weight: 400;
-    padding-left: 5px;
-    padding-right: 5px;
-    /* @media (max-width: 500px) {
-        font-size: 1.25rem;
-    } */
+    transform: rotate(180deg);
 }
 
 
-.move-down {
+.move-down, .move-up {
     font-size: 1rem;
     font-weight: 500;
     padding-left: 5.5px;

@@ -14,7 +14,7 @@ body {
     /* min-width: calc(23.25cm + 12rem); */
     padding: 2.5vh 1vw 2.5vh;
     display: flex;
-    
+    gap: 2rem;
     /* main background color */
    
 }
@@ -53,14 +53,13 @@ input, textarea {
     margin-bottom: 1rem;
 }
 .edit-side {
-    margin-right: 1.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     width: 30rem;
 }
 
-.personal-section, .awards-section, .extracurriculars-section, .display-side{
+.content-box{
     padding: 2rem;
     border: transparent;
     border-radius: 10px;

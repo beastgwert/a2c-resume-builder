@@ -6,7 +6,7 @@ import '../../../styles/Section.css'
 
 export default function ExtracurricularsSection({extracurriculars, onChange, onCollapsedChange, onSave, onRemove, onCancel, onAdd, onUp, onDown, setOpen, isOpen}){
     return (
-        <div className="extracurriculars-section">
+        <div className="extracurriculars-section content-box">
             <SectionHeader
                 setOpen={setOpen}
                 isOpen={isOpen}
