@@ -1,0 +1,18 @@
+.template-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.template-content {
+    display: flex;
+    gap: 1rem;
+}
+
+.template-content button {
+    padding: 0.8rem 1rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+

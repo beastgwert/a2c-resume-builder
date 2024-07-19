@@ -1,0 +1,39 @@
+.resume2, .resume2 p {
+    padding: 0;
+}
+
+.resume2, .resume2-left, .resume2-right{
+    border-radius: 3px;
+}
+
+.resume2-left {
+    background-color: #355E3B;
+    color: white;
+    padding: 10% 8% 5%;
+}
+.resume2-left * {
+    background: inherit;
+}
+
+.resume2-personal div:not(.resume2-name) {
+    margin-bottom: 12px;
+}
+.resume2-name {
+    margin-bottom: 20px;
+}
+
+.resume2-personal div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resume2-personal .fas {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+
+.fa-location-dot::before {
+    font-size: 1.2em;
+}

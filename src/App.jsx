@@ -35,10 +35,13 @@ function App() {
       content: () => printRef.current,
   });
 
- 
+  function onResumeChange(e){
+    const key = parseInt(e.target.closest('.resume-button-container').dataset.key);
+    setResumeIndex(key);
+  }
+
   function changeEditDisplay(e){
     const key = e.target.closest('.sidebar-container').dataset.key;
-    console.log("got to edit display: ", key, e.target);
     setIsContent(key == "content");
   }
 
@@ -241,7 +244,10 @@ function App() {
         />
         </>
         :
-        <Customize />
+        <Customize 
+        onResumeChange={onResumeChange}
+        resumeIndex={resumeIndex}
+        />
         }
         <div className='utility'>
           <ClearButton
