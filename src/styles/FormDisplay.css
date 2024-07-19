@@ -3,6 +3,6 @@ form{
     flex-direction: column;
 }
 
-#description {
-    height: 125px;
+textarea {
+    height: 15rem;
 }

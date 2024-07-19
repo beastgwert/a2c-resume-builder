@@ -1,7 +1,7 @@
 .template-section {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    padding-bottom: 1rem;
 }
 .template-content {
     display: flex;

@@ -45,7 +45,7 @@ input,  textarea{
   font-family: "Inter", sans-serif;
 }
 
-input:focus {
+input:focus, textarea:focus {
   border: 2px solid rgb(99, 88, 70);
   transition: border ease-in-out .3s;
 }

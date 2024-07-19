@@ -37,3 +37,9 @@
 .fa-location-dot::before {
     font-size: 1.2em;
 }
+
+.resume2-left h2 {
+    font-size: 1.25em;
+    margin-top: 3em;
+    border-bottom: 3px solid white;
+}

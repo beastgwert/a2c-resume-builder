@@ -3,6 +3,7 @@ import './styles/App.css';
 import PersonalSection from './components/edit/sections/PersonalSection';
 import AwardsSection from './components/edit/sections/AwardsSection';
 import ExtracurricularsSection from './components/edit/sections/ExtracurricularsSection';
+import ProfileSection from './components/edit/sections/ProfileSection';
 import Resume from './components/display/Resume';
 import Resume2 from './components/display/Resume2';
 import PdfDownloadButton from './components/edit/forms/PdfDownloadButton';
@@ -59,6 +60,13 @@ function App() {
     const curIndex = tempData[curSection].isEditing;
 
     tempData[curSection].content[curIndex][key] = e.target.value;
+    setSections(tempData);
+  }
+
+  function changeProfileInfo(e){
+    const tempData = {...sections};
+    tempData.profile = e.target.value;
+
     setSections(tempData);
   }
 
@@ -204,44 +212,50 @@ function App() {
       <div className='edit-side'>
         {isContent ? 
         <>
-        <PersonalSection 
-          onChange = {changePersonalInfo}
-          name = {personalInfo.name}
-          email = {personalInfo.email}
-          phoneNumber = {personalInfo.phoneNumber}
-          address = {personalInfo.address}
-          schoolName = {personalInfo.schoolName}
-          schoolStart = {personalInfo.schoolStart}
-          schoolEnd = {personalInfo.schoolEnd}
-          setOpen = {setOpen}
-          isOpen = {sectionOpen === "Personal"}
-        />
-        <AwardsSection 
-          awards = {sections.awards}
-          onChange = {changeSectionInfo}
-          onCollapsedChange = {changeForm}
-          onSave = {onSave}
-          onCancel = {onCancel}
-          onRemove = {onRemove}
-          onAdd = {onAdd}
-          onUp = {onUp}
-          onDown = {onDown}
-          setOpen = {setOpen}
-          isOpen = {sectionOpen === "Awards"}
-        />
-        <ExtracurricularsSection
-          extracurriculars = {sections.extracurriculars}
-          onChange = {changeSectionInfo}
-          onCollapsedChange = {changeForm}
-          onSave = {onSave}
-          onCancel = {onCancel}
-          onRemove = {onRemove}
-          onAdd = {onAdd}
-          onUp = {onUp}
-          onDown = {onDown}
-          setOpen = {setOpen}
-          isOpen = {sectionOpen === "Extracurriculars"}
-        />
+          <PersonalSection 
+            onChange = {changePersonalInfo}
+            name = {personalInfo.name}
+            email = {personalInfo.email}
+            phoneNumber = {personalInfo.phoneNumber}
+            address = {personalInfo.address}
+            schoolName = {personalInfo.schoolName}
+            schoolStart = {personalInfo.schoolStart}
+            schoolEnd = {personalInfo.schoolEnd}
+            setOpen = {setOpen}
+            isOpen = {sectionOpen === "Personal"}
+          />
+          <AwardsSection 
+            awards = {sections.awards}
+            onChange = {changeSectionInfo}
+            onCollapsedChange = {changeForm}
+            onSave = {onSave}
+            onCancel = {onCancel}
+            onRemove = {onRemove}
+            onAdd = {onAdd}
+            onUp = {onUp}
+            onDown = {onDown}
+            setOpen = {setOpen}
+            isOpen = {sectionOpen === "Awards"}
+          />
+          <ExtracurricularsSection
+            extracurriculars = {sections.extracurriculars}
+            onChange = {changeSectionInfo}
+            onCollapsedChange = {changeForm}
+            onSave = {onSave}
+            onCancel = {onCancel}
+            onRemove = {onRemove}
+            onAdd = {onAdd}
+            onUp = {onUp}
+            onDown = {onDown}
+            setOpen = {setOpen}
+            isOpen = {sectionOpen === "Extracurriculars"}
+          />
+          <ProfileSection
+            profile = {sections.profile}
+            onChange = {changeProfileInfo}
+            setOpen = {setOpen}
+            isOpen = {sectionOpen === "Profile"}
+          />
         </>
         :
         <Customize 
@@ -249,6 +263,7 @@ function App() {
         resumeIndex={resumeIndex}
         />
         }
+
         <div className='utility'>
           <ClearButton
             onClear = {onClear}
@@ -276,6 +291,7 @@ function App() {
         personal = {personalInfo}
         awards = {sections.awards.content}
         extracurriculars = {sections.extracurriculars.content}
+        profile = {sections.profile}
         ref = {printRef}
       />
       :

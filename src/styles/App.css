@@ -73,7 +73,7 @@ input, textarea {
     padding-bottom: 0;
 }
 
-.awards-section, .extracurriculars-section {
+.edit-side .content-box:not(.customize-section) {
     padding: 1.5rem;
     padding-bottom: 0;
 }
