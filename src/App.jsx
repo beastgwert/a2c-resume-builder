@@ -269,6 +269,9 @@ function App() {
             setOpen = {setOpen}
             isOpen = {sectionOpen === "Profile"}
           />
+          <p className='disclaimer bg-transparent mb-3'>
+            *May not appear in certain templates
+          </p>
         </>
         :
         <Customize 
@@ -276,9 +279,7 @@ function App() {
         resumeIndex={resumeIndex}
         />
         }
-        <p className='disclaimer bg-transparent mb-3'>
-          *May not appear in certain templates
-        </p>
+        
         <div className='utility'>
           <ClearButton
             onClear = {onClear}

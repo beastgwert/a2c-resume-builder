@@ -1,0 +1,19 @@
+
+.font-content div {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.font-demo1 {
+    font-size: 2rem;
+}
+
+.font-demo2 {
+    font-size: 1.8rem;
+}
+
+.font-demo3 {
+    padding-top: 4px;
+    font-size: 2rem;
+}

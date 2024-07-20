@@ -8,6 +8,7 @@ body {
     --main-bg-color: rgb(210 213 224);
     --input-bg-color: rgb(228 231 236);
     --resume2-bg-color: #355E3B;
+    --resume-font: 'Times New Roman', Times, serif;
 }
 #root {
     /* min-width: calc(23.25cm + 12rem); */
@@ -59,7 +60,7 @@ input, textarea {
 }
 
 .content-box{
-    padding: 2rem;
+    padding: 1.5rem;
     border: transparent;
     border-radius: 10px;
     margin-bottom: 2rem;
@@ -81,7 +82,7 @@ input, textarea {
     margin-top: 1rem;
     border: 10px;
     border-radius: 50%;
-    padding: 4px 8px;
+    padding: 4px 8px 6px;
     color: white;
     font-weight: 700;
     background-color: rgb(216, 142, 142);
@@ -110,4 +111,8 @@ input, textarea {
     border: 1px solid black;
     transform: scale(1.1);
     flex-grow: 0;
+}
+
+.customize {
+    background-color: var(--main-bg-color);
 }
