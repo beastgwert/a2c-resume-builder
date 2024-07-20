@@ -13,6 +13,7 @@ export default function AwardsSection({awards, onChange, onCollapsedChange, onSa
                 sectionTitle="Awards & Honors"
                 sectionName="Awards"
                 iconName="fas fa-medal"
+                isOptional="false"
             />
             <div className={`section-content ${isOpen ? "open" : ""}`}>
                 <FormDisplay 

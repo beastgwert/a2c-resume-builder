@@ -1,4 +1,4 @@
-.resume2, .resume2 p {
+.resume2, .resume2 p:not(.resume2-section-header) {
     padding: 0;
 }
 
@@ -7,9 +7,9 @@
 }
 
 .resume2-left {
-    background-color: #355E3B;
+    background-color: var(--resume2-bg-color);
     color: white;
-    padding: 10% 8% 5%;
+    padding: 6em 3.5em;
 }
 .resume2-left * {
     background: inherit;
@@ -42,4 +42,31 @@
     font-size: 1.25em;
     margin-top: 3em;
     border-bottom: 3px solid white;
+    margin-bottom: 0.75em;
+}
+
+.resume2-education {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.resume2-right {
+    padding: 6em 3.5em;
+    color: var(--resume2-bg-color);
+}
+
+.resume2 .section {
+    margin-bottom: 1.25em;
+}
+
+.resume2-section-header {
+    padding: 5px 0px;
+    border-bottom: 4px solid var(--resume2-bg-color);
+    font-weight: 550;
+    margin-bottom: 1em;
+}
+
+.resume2-extracurricular {
+    margin-bottom: 1em;
 }

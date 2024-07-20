@@ -43,6 +43,7 @@ button {
 
 input,  textarea{
   font-family: "Inter", sans-serif;
+  width: 100%;
 }
 
 input:focus, textarea:focus {

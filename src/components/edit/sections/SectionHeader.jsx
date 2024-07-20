@@ -1,8 +1,12 @@
 
-export default function SectionHeader({sectionName, sectionTitle, isOpen, setOpen, iconName}){
+export default function SectionHeader({sectionName, sectionTitle, isOpen, setOpen, iconName, isOptional}){
     return (
         <div className="section-header" onClick={() => setOpen(isOpen ? null : sectionName)}>
-            <h2 className="section-title">
+            <h2 className={`section-title ${isOptional == "true" ? 'is-optional' : ""} `}>
+                {isOptional == "false" ? "" :
+                    <p>*</p>
+
+                }
                 {iconName == "none" ? "" :
                     <i className={iconName}></i>
                 }

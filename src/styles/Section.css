@@ -28,6 +28,10 @@
     gap: 10px;
 }
 
+.section-title.is-optional {
+    gap: 0;
+}
+
 .section-content {
     position: relative;
     visibility: hidden;

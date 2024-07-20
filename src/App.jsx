@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './styles/App.css';
 import PersonalSection from './components/edit/sections/PersonalSection';
+import EducationSection from './components/edit/sections/EducationSection';
 import AwardsSection from './components/edit/sections/AwardsSection';
 import ExtracurricularsSection from './components/edit/sections/ExtracurricularsSection';
 import ProfileSection from './components/edit/sections/ProfileSection';
@@ -23,7 +24,7 @@ function App() {
   const [isContent, setIsContent] = useState(true);
   const [resumeIndex, setResumeIndex] = useState(0);
 
-  console.log("exampleData: ", exampleData)
+  console.log("sections: ", sections);
    // persist user input
    useEffect(() => {
     localStorage.setItem("sections", JSON.stringify(sections));
@@ -51,6 +52,13 @@ function App() {
     setPersonalInfo({...personalInfo, [key]: e.target.value});
   }
 
+  function changeEducationInfo(e){
+    const tempData = {...sections};
+    const key = e.target.dataset.key;
+    tempData.education[key] = e.target.value;
+
+    setSections(tempData);
+  }
   function changeSectionInfo(e){
     console.log("got to change section: ", e.target.value);
     // updates section form edit
@@ -187,6 +195,8 @@ function App() {
     tempData.awards.isEditing = -1;
     tempData.extracurriculars.content = [];
     tempData.extracurriculars.isEditing = -1;
+    tempData.profile = "";
+    Object.keys(tempData.education).forEach(k => tempData.education[k] = "");
     //clear personal
     Object.keys(tempPersonal).forEach(k => tempPersonal[k] = "");
   
@@ -218,11 +228,14 @@ function App() {
             email = {personalInfo.email}
             phoneNumber = {personalInfo.phoneNumber}
             address = {personalInfo.address}
-            schoolName = {personalInfo.schoolName}
-            schoolStart = {personalInfo.schoolStart}
-            schoolEnd = {personalInfo.schoolEnd}
             setOpen = {setOpen}
             isOpen = {sectionOpen === "Personal"}
+          />
+          <EducationSection
+            onChange = {changeEducationInfo}
+            education = {sections.education}
+            setOpen = {setOpen}
+            isOpen = {sectionOpen === "Education"}
           />
           <AwardsSection 
             awards = {sections.awards}
@@ -263,7 +276,9 @@ function App() {
         resumeIndex={resumeIndex}
         />
         }
-
+        <p className='disclaimer bg-transparent mb-3'>
+          *May not appear in certain templates
+        </p>
         <div className='utility'>
           <ClearButton
             onClear = {onClear}
@@ -281,6 +296,7 @@ function App() {
      {resumeIndex == 0 ? 
       <Resume 
         personal = {personalInfo}
+        education = {sections.education}
         awards = {sections.awards.content}
         extracurriculars = {sections.extracurriculars.content}
         ref = {printRef}
@@ -289,6 +305,7 @@ function App() {
       resumeIndex == 1 ?
       <Resume2
         personal = {personalInfo}
+        education = {sections.education}
         awards = {sections.awards.content}
         extracurriculars = {sections.extracurriculars.content}
         profile = {sections.profile}

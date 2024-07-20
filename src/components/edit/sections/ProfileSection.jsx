@@ -9,9 +9,10 @@ export default function ProfileSection({profile, onChange, setOpen, isOpen}){
                 sectionTitle="Profile"
                 sectionName="Profile"
                 iconName="none"
+                isOptional="true"
             />
             <form className={`section-content ${isOpen ? 'open' : ''}`}>
-                <textarea id="profile-description" placeholder="Add a profile description" className="h-14" value={profile} onChange={onChange}/>
+                <textarea id="profile-description" placeholder="Add a profile description" value={profile} onChange={onChange}/>
             </form>
         </div>
     )

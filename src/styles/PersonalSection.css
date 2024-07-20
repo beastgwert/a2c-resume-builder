@@ -1,28 +1,3 @@
 .personal-section h2 {
     margin-bottom: 1rem;
 }
-
-.school-info {
-    display: flex;
-    justify-content: space-between;
-}
-
-.school-dates {
-    display: flex;
-    /* margin-left: 10rem; */
-    margin-top: 5px;
-}
-
-.school-dates .input-group {
-    width: 4rem;
-}
-
-.school-title {
-    width: 16rem;
-}
-.school-dates label {
-    font-size: 1rem;
-}
-#schoolEndGroup {
-    margin-left: 1rem;
-}

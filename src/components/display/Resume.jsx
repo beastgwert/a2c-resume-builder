@@ -2,7 +2,7 @@ import '../../styles/Resume.css';
 import { forwardRef, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
-const Resume = forwardRef(({personal, awards, extracurriculars}, ref) => {
+const Resume = forwardRef(({personal, education, awards, extracurriculars}, ref) => {
     console.log("checking resume: ", awards.map((award) => award.title));
     
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -18,7 +18,7 @@ const Resume = forwardRef(({personal, awards, extracurriculars}, ref) => {
     }
 
     return (
-        <div className='display-side content-box' id='pdf-content' ref={ref}>
+        <div className='resume display-side content-box' id='pdf-content' ref={ref}>
             <div className="resume-header">
                 <p className="personal-1">{personal.name}</p>
                 <div className="personal-2">
@@ -32,8 +32,8 @@ const Resume = forwardRef(({personal, awards, extracurriculars}, ref) => {
                 <p className='education-header'> EDUCATION </p>
                 <div className='education-info'>
                     <div className='school info-box'>
-                        <p className='title'>{personal.schoolName}</p>
-                        <p className='school-date'> {personal.schoolStart} - {personal.schoolEnd}</p>
+                        <p className='title'>{education.schoolName}</p>
+                        <p className='school-date'> {education.schoolStart} - {education.schoolEnd}</p>
                     </div>
                 </div>
 

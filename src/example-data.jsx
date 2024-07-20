@@ -5,13 +5,16 @@ const exampleData = {
         email: "galarblemarble@gmail.com",
         phoneNumber: "469-744-9264",
         address: 'Plano, TX',
-        schoolName: 'Plano West Senior High School',
-        schoolStart: 2020,
-        schoolEnd: 2024,
-        gpa: 4.8
     },
-
     sections: {
+        education: {
+            schoolName: 'Westwood High School',
+            schoolStart: 2020,
+            schoolEnd: 2024,
+            city: 'Austin',
+            state: "Texas",
+            gpa: 4.8,
+        },
         awards: {
             content: [
                 {

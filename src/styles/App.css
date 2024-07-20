@@ -5,11 +5,10 @@ body {
     justify-content: center;
     /* --main-bg-color: rgb(245, 230, 216);
     --input-bg-color: rgb(253, 246, 236); */
-    --main-bg-color: rgb(240 238 235);
-    --input-bg-color: rgb(243 244 246);
-
+    --main-bg-color: rgb(210 213 224);
+    --input-bg-color: rgb(228 231 236);
+    --resume2-bg-color: #355E3B;
 }
-
 #root {
     /* min-width: calc(23.25cm + 12rem); */
     padding: 2.5vh 1vw 2.5vh;
