@@ -1,6 +1,7 @@
 import Buttons from "./Buttons"
+import Tiptap from "../../misc/Tiptap"
 
-export default function ExtracurricularsForm({forms, onSave, onCancel, onChange}){
+export default function ExtracurricularsForm({forms, onSave, onCancel, onChange, changeExtracurricularDescription}){
     return (
         <>
             <form>
@@ -22,7 +23,11 @@ export default function ExtracurricularsForm({forms, onSave, onCancel, onChange}
 
                <div className="input-group">
                     <label htmlFor="description">Description </label>
-                    <textarea id="description" data-key="description" data-section="extracurriculars" placeholder="Enter description" value={forms.content[forms.isEditing].description} onChange={onChange}/>
+                    <Tiptap 
+                    changeExtracurricularDescription = {changeExtracurricularDescription}
+                    forms = {forms}
+                    />
+                    {/* <textarea id="description" data-key="description" data-section="extracurriculars" placeholder="Enter description" value={forms.content[forms.isEditing].description} onChange={onChange}/> */}
                </div>
                 <Buttons 
                 section = "extracurriculars"

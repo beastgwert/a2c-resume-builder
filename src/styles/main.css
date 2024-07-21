@@ -39,6 +39,7 @@ button {
   cursor: pointer;
   transition: all 0.5s ease 0s;
   background-color: white;
+  border: none;
 }
 
 input,  textarea{
@@ -50,6 +51,19 @@ input:focus, textarea:focus {
   border: 2px solid rgb(99, 88, 70);
   transition: border ease-in-out .3s;
 }
+
 p {
   overflow-wrap: break-word;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li p{
+  display: inline;
+}
+
+li ul li {
+  list-style-type: circle;
 }

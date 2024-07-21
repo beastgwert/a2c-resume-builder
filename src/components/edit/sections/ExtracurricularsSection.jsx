@@ -4,7 +4,7 @@ import AddFormButton from "../forms/AddFormButton";
 import SectionHeader from "./SectionHeader";
 import '../../../styles/Section.css'
 
-export default function ExtracurricularsSection({extracurriculars, onChange, onCollapsedChange, onSave, onRemove, onCancel, onAdd, onUp, onDown, setOpen, isOpen}){
+export default function ExtracurricularsSection({extracurriculars, onChange, onCollapsedChange, onSave, onRemove, onCancel, onAdd, onUp, onDown, setOpen, isOpen, changeExtracurricularDescription}){
     return (
         <div className="extracurriculars-section content-box">
             <SectionHeader
@@ -27,6 +27,7 @@ export default function ExtracurricularsSection({extracurriculars, onChange, onC
                 onCancel={onCancel}
                 onUp={onUp}
                 onDown={onDown}
+                changeExtracurricularDescription={changeExtracurricularDescription}
                 />
             
                 <AddFormButton 

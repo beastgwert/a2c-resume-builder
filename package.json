@@ -15,6 +15,11 @@
   "dependencies": {
     "@progress/kendo-drawing": "^1.20.1",
     "@progress/kendo-react-pdf": "^8.1.1",
+    "@tiptap/extension-bullet-list": "^2.5.4",
+    "@tiptap/extension-list-item": "^2.5.4",
+    "@tiptap/pm": "^2.5.4",
+    "@tiptap/react": "^2.5.4",
+    "@tiptap/starter-kit": "^2.5.4",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "react": "^18.2.0",

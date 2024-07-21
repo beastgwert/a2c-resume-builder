@@ -1,0 +1,29 @@
+.edit-extracurricular-description {
+    background-color: var(--input-bg-color);
+    border-radius: 10px;
+}
+
+.edit-extracurricular-description * {
+    background-color: inherit;
+}
+
+.edit-extracurricular-description > div{
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.edit-extracurricular-description li {
+    margin-left: 1em;
+}
+
+.menu-buttons {
+    display: flex;
+    gap: 1rem;
+    border-radius: 5px;
+    border-bottom: 1px solid rgb(221, 217, 217);
+}
+
+.menu-buttons .fas {
+    font-size: 1.25rem;
+}
+

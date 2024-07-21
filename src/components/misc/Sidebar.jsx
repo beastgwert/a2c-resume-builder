@@ -1,4 +1,4 @@
-import '../styles/Sidebar.css'
+import '../../styles/Sidebar.css'
 
 export default function Sidebar({onChange, isContent}){
     return (

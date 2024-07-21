@@ -77,7 +77,7 @@ const Resume = forwardRef(({personal, education, awards, extracurriculars}, ref)
                                         
                                     </div>
                                 </div>
-                                <p className='extracurricular-description'>{extracurricular.description}</p>
+                                <div className='extracurricular-description' dangerouslySetInnerHTML={{__html: extracurricular.description}}></div>
                             </div>
                         )
                     }

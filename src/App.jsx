@@ -11,8 +11,8 @@ import PdfDownloadButton from './components/edit/forms/PdfDownloadButton';
 import ClearButton from './components/edit/forms/ClearButton';
 import LoadExampleButton from './components/edit/forms/LoadExampleButton';
 import exampleData from './example-data';
-import Sidebar from './components/Sidebar';
-import Customize from './components/Customize'
+import Sidebar from './components/misc/Sidebar';
+import Customize from './components/misc/Customize'
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
@@ -24,7 +24,6 @@ function App() {
   const [isContent, setIsContent] = useState(true);
   const [resumeIndex, setResumeIndex] = useState(0);
 
-  console.log("sections: ", sections);
    // persist user input
    useEffect(() => {
     localStorage.setItem("sections", JSON.stringify(sections));
@@ -59,6 +58,16 @@ function App() {
 
     setSections(tempData);
   }
+
+  function changeExtracurricularDescription(htmlContent){
+    console.log("got to extracurricular description");
+    const tempData = {...sections};
+    tempData.extracurriculars.content[tempData.extracurriculars.isEditing].description = htmlContent;
+    
+    console.log("last dance: ", tempData);
+    setSections(tempData);
+  }
+
   function changeSectionInfo(e){
     console.log("got to change section: ", e.target.value);
     // updates section form edit
@@ -262,6 +271,7 @@ function App() {
             onDown = {onDown}
             setOpen = {setOpen}
             isOpen = {sectionOpen === "Extracurriculars"}
+            changeExtracurricularDescription = {changeExtracurricularDescription}
           />
           <ProfileSection
             profile = {sections.profile}

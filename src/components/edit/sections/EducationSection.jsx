@@ -3,7 +3,6 @@ import '../../../styles/Section.css'
 import SectionHeader from "./SectionHeader";
 
 export default function EducationSection({onChange, education, setOpen, isOpen}){
-    console.log("education: ", education);
     return (
         <div className='education-section content-box'>
             <SectionHeader
