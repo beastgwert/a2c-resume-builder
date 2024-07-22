@@ -1,3 +1,5 @@
 # College App Resume Builder
 
-[Try it out](https://beastgwert.github.io/a2c-resume-builder/)
+## [Preview](https://a2c-resume-builder.vercel.app/)
+
+![Demo Picture](src/assets/a2c-resume-preview.png)

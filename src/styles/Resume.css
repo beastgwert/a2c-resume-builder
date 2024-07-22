@@ -26,6 +26,9 @@
     justify-content: center;
 }
 
+.resume-header p {
+    padding: 3px;
+}
 .personal-1 {
     text-transform: uppercase;
     font-size: 24px;
