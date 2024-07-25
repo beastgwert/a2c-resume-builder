@@ -41,6 +41,10 @@
     transform-origin: top;
   }
 
+  .section-content:not(.open) div, .section-content:not(.open) p{
+    height: 0;
+    font-size: 0;
+  }
 .section-content.open {
     transition: transform, visibility, height, opacity;
     transition-duration: 0.2s;

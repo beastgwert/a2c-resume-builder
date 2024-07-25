@@ -66,6 +66,9 @@ function App() {
     
     console.log("last dance: ", tempData);
     setSections(tempData);
+
+    const resumeHeight = document.querySelector('.resume-content').offsetHeight;
+    console.log("resumeHeight: ", resumeHeight);
   }
 
   function changeSectionInfo(e){
@@ -78,6 +81,9 @@ function App() {
 
     tempData[curSection].content[curIndex][key] = e.target.value;
     setSections(tempData);
+    
+    const resumeHeight = document.querySelector('.resume-content').offsetHeight;
+    console.log("resumeHeight: ", resumeHeight);
   }
 
   function changeProfileInfo(e){
